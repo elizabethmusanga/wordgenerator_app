@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final wordPair = WordPair.random();
     return MaterialApp(
-        home: Text('Hello World',
-            style: TextStyle(fontSize: 30.5, color: Colors.green[400])));
+        theme: ThemeData(primaryColor: Color(0xFF760689)),
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Word Pair generator'),
+            ),
+            body: Center(
+              child: Text(wordPair.asPascalCase),
+            )));
   }
 }
